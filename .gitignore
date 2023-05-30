@@ -1,3 +1,9 @@
+[Pp]ackages/
+[Ll]ogs/
+[Ll]ibrary/
+[Uu]serSettings/
+[Gg]ameSet.sln
+[Aa]ssembly-CSharp.csproj
 # Compiled Lua sources
 luac.out
 

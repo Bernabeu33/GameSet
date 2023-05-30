@@ -3,15 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameLaunch : MonoBehaviour
+public class DontDestroy : MonoBehaviour
 {
-    private void Awake()
-    {
-        
-    }
-
     private void Start()
     {
-        
+        DontDestroyOnLoad(this.gameObject);
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class GameLaunch : MonoBehaviour
 {
+    public GameObject reporterObj = null;
     private void Awake()
     {
         

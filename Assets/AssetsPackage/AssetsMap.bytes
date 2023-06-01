@@ -1,0 +1,6 @@
+atlas/uitrade.assetbundle,Atlas/UITrade/UITrade.spriteatlas
+audios/music/bg02,Audios/Music/BG02.mp3
+audios/music/bg03,Audios/Music/BG03.mp3
+material.assetbundle,Material/cube.mat
+prefabs.assetbundle,Prefabs/Cube.prefab
+prefabs.assetbundle,Prefabs/Sphere.prefab

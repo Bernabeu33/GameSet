@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 namespace AssetBundles
 {
@@ -27,6 +28,22 @@ namespace AssetBundles
             // Assets/AssetBundles/ + assetPath
             return "Assets/" + AssetBundleConfig.AssetsFolderName + "/" + assetPath;
         }
+        
+        public static string GetPersistentDataPath(string assetPath = null)
+        {
+            string outputPath = Path.Combine(Application.persistentDataPath, AssetBundleConfig.AssetBundlesFolderName);
+            if (!string.IsNullOrEmpty(assetPath))
+            {
+                outputPath = Path.Combine(outputPath, assetPath);
+            }
+#if UNITY_EDITOR_WIN
+            return GameUtility.FormatToSysFilePath(outputPath);
+#else
+            return outputPath;
+#endif
+        }
     } 
+    
+    
 }
 

@@ -6,6 +6,7 @@ using System.IO;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
+using AssetBundles;
 
 public class GameLaunch : MonoBehaviour
 {
@@ -50,7 +51,6 @@ public class GameLaunch : MonoBehaviour
         // Editor下路径: /Users/mac/Desktop/WorkSpace/GameSets/AssetBundles/
         string rootPath = Path.Combine(System.Environment.CurrentDirectory, AssetBundleConfig.AssetBundlesFolderName);  
         string AssetBundleRootPath = Path.Combine(rootPath, platform + "/AssetBundles");
-        Debug.Log(AssetBundleRootPath);
         // AssetBundle根路径  如:/Users/mac/Desktop/WorkSpace/GameSets/AssetBundles/Android/AssetBundles
         AssetBundleConfig.AssetBundleRootPath = AssetBundleRootPath;
         StartCoroutine(StartUp());
@@ -58,6 +58,22 @@ public class GameLaunch : MonoBehaviour
 
     IEnumerator StartUp()
     {
-        yield return null;
+        // 配置数据读取
+        StartCoroutine(Config());
+        // SDK初始化
+        var start = DateTime.Now;
+        
+        yield return AssetBundleManager.Instance.Initialize();
+        yield break; 
+    }
+
+    /// <summary>
+    /// 配置数据读取
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator Config()
+    {
+        // TODO
+        yield break;
     }
 }
